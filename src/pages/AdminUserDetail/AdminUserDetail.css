@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  color: #667eea;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #667eea;
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #667eea;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.tab:hover:not(.active) {
+  background-color: #f0f0ff;
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 40px;
+  font-size: 16px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.game-card.in-progress { border-left: 4px solid #ffc107; }
+.game-card.finalized { border-left: 4px solid #28a745; }
+
+.game-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.game-card.in-progress .game-status-badge { background-color: #ffc107; }
+.game-card.finalized .game-status-badge { background-color: #28a745; }
+
+.game-card h3 { color: #667eea; margin-bottom: 10px; }
+.game-info-text { color: #333; margin: 5px 0; font-size: 14px; }
+.game-date { color: #999; font-size: 12px; margin-top: 10px; }
+
+.btn-view {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.leaderboard-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.leaderboard-table tbody tr:hover { background-color: #e8f5e9; }
+.top-player { background-color: #e8f5e9; font-weight: bold; }
+.rank { text-align: center; font-size: 18px; }
+.positive { color: #28a745; }
+.negative { color: #dc3545; }
+
+@media (max-width: 768px) {
+  .games-grid { grid-template-columns: 1fr; }
+  .tab { font-size: 14px; padding: 12px; }
+  .leaderboard-table { display: block; overflow-x: auto; white-space: nowrap; font-size: 14px; }
+}

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  settle-me:
+    build: .
+    container_name: settle-me-app
+    ports:
+      - "80:80"
+    volumes:
+      - settle-me-data:/app/server/data
+    restart: unless-stopped
+
+volumes:
+  settle-me-data:
