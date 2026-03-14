@@ -31,6 +31,13 @@ npm run dev
 - Backend: http://localhost:3001
 - Admin login: `admin` / `admin123`
 
+## Export as Source Archive
+
+```bash
+cd /path/to/parent/folder
+tar -czf settle-me.tar.gz --exclude='**/node_modules' --exclude='server/data/*.db*' settle-me
+```
+
 ## Docker Setup
 
 ```bash
